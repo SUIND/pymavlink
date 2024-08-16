@@ -23,7 +23,7 @@ Current Swift implementation supports only first version of MAVLink protocol.
 
 ## Generating Platform-specific Source Files
 
-To generate MAVLink Swift Library for specific flight controller or specific firmware version you need to follow [this](https://github.com/ArduPilot/mavlink#generating-language-specific-source-files) instructions.
+To generate MAVLink Swift Library for specific flight controller or specific firmware version you need to follow [this](git@github.com:SUIND/mavlink.git#generating-language-specific-source-files) instructions.
 
 ## Installation
 

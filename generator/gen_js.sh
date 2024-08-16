@@ -17,8 +17,8 @@ for protocol in 1.0 2.0; do
     "version" : "0.0.3",
     "description" : "NextGen Implementation of the MAVLink protocol",
     "keywords" : ["mavlink", "arduino", "ardupilot", "ros", "robot", "uav", "drone", "awesome"],
-    "homepage": "https://github.com/ardupilot/mavlink",
-    "bugs" : "https://github.com/ardupilot/mavlink/issues",
+    "homepage": "git@github.com:SUIND/mavlink.git",
+    "bugs" : "git@github.com:SUIND/mavlink.git/issues",
     "license" : {
         "type" : "LGPL-3.0",
         "url" : "http://opensource.org/licenses/LGPL-3.0"
@@ -27,7 +27,7 @@ for protocol in 1.0 2.0; do
     "main" : "mavlink.js",
     "repository" : {
       "type" : "git",
-      "url" : "https://github.com/ardupilot/mavlink"
+      "url" : "git@github.com:SUIND/mavlink.git"
       },
     "dependencies" : {
       "underscore" : "",

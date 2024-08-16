@@ -53,7 +53,7 @@ jobs:
       # install
       - name: Install mavlink message
         run: |
-          git clone https://github.com/ArduPilot/mavlink.git
+          git clone git@github.com:SUIND/mavlink.git.git
           ln -s $PWD/mavlink/message_definitions ../
 
       - name: Install pymavlink
