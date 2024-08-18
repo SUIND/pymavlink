@@ -124,6 +124,7 @@ MAVLINK_HELPER bool mavlink_signature_check(mavlink_signing_t *signing,
 					    mavlink_signing_streams_t *signing_streams,
 					    const mavlink_message_t *msg)
 {
+	printf("CP 0");
 	if (signing == NULL) {
 		return true;
 	}
@@ -142,6 +143,7 @@ MAVLINK_HELPER bool mavlink_signature_check(mavlink_signing_t *signing,
 	mavlink_sha256_update(&ctx, psig, 1+6);
 	mavlink_sha256_final_48(&ctx, signature);
 	if (memcmp(signature, incoming_signature, 6) != 0) {
+		printf("CP 1");
 		return false;
 	}
 
@@ -155,6 +157,7 @@ MAVLINK_HELPER bool mavlink_signature_check(mavlink_signing_t *signing,
 	memcpy(tstamp.t8, psig+1, 6);
 
 	if (signing_streams == NULL) {
+		printf("CP 2");
 		return false;
 	}
 	
@@ -169,6 +172,7 @@ MAVLINK_HELPER bool mavlink_signature_check(mavlink_signing_t *signing,
 	if (i == signing_streams->num_signing_streams) {
 		if (signing_streams->num_signing_streams >= MAVLINK_MAX_SIGNING_STREAMS) {
 			// over max number of streams
+			printf("CP 3");
 			return false;
 		}
 		// new stream. Only accept if timestamp is not more than 1 minute old
@@ -793,6 +797,7 @@ MAVLINK_HELPER uint8_t mavlink_frame_char_buffer(mavlink_message_t* rxmsg,
 		if (status->signature_wait == 0) {
 			// we have the whole signature, check it is OK
 #ifndef MAVLINK_NO_SIGNATURE_CHECK
+            printf("Checking signature");
 			bool sig_ok = mavlink_signature_check(status->signing, status->signing_streams, rxmsg);
 #else
 			bool sig_ok = true;
